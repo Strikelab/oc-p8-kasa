@@ -1,0 +1,35 @@
+.active {
+  border-bottom:1px solid $primary-color;
+}
+
+header {
+  @include flex($direction: row, $justify: space-between);
+  max-width:1240px;
+  margin: auto;
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  height: calc(45px + 68px);
+  img {
+    margin-top:45px;
+    height: 68px;
+  }
+
+  nav {
+    @include flex($align: center);
+    
+    ul {
+        margin-top:45px;
+      @include flex($gap:57px);
+    }
+
+    li {
+    
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+}

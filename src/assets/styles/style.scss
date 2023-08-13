@@ -2,19 +2,20 @@
 // @import "./vendors/google-fonts";
 
 // // utils
-// @import "./utils/variables";
-// @import "./utils/mixins";
+@import "./utils/variables";
+@import "./utils/mixins";
 // @import "./utils/extends";
 
-// // base
-// @import "./base/global";
+// base
+@import "./base/reset";
+@import "./base/global";
 // @import "./base/typography";
 
-// // layout
+// layout
 // @import "./layout/loader";
-// @import "./layout/header";
-// @import "./layout/footer";
- 
+@import "./layout/header";
+@import "./layout/footer";
+
 // // components
 
 // @import "./components/button-style1";
@@ -23,9 +24,8 @@
 // @import "./components/card";
 // @import "./components/form";
 
-
-// // pages
-// @import "./pages/homepage";
+// pages
+ @import "./pages/homepage";
+ @import "./pages/about";
+ @import "./pages/pageNotFound";
 // @import "./pages/restaurant";
-
-
