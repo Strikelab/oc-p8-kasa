@@ -1,0 +1,14 @@
+nav {
+  @include flex($align: center);
+  font-size: 24px;
+
+  ul {
+    margin-top: 45px;
+    @include flex($gap: 57px);
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: $primary-color;
+  }
+}

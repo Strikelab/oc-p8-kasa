@@ -1,31 +1,25 @@
-// //  vendors
-// @import "./vendors/google-fonts";
+//  vendors
+@import "./vendors/google-fonts";
 
 // // utils
 @import "./utils/variables";
 @import "./utils/mixins";
-// @import "./utils/extends";
+
 
 // base
 @import "./base/reset";
 @import "./base/global";
-// @import "./base/typography";
+
 
 // layout
-// @import "./layout/loader";
 @import "./layout/header";
 @import "./layout/footer";
 
 // components
 @import "./components/logo";
-// @import "./components/button-style1";
-// @import "./components/button-style2";
-// @import "./components/heart";
-// @import "./components/card";
-// @import "./components/form";
+@import "./components/navbar";
 
 // pages
- @import "./pages/homepage";
- @import "./pages/about";
- @import "./pages/pageNotFound";
-// @import "./pages/restaurant";
+@import "./pages/homepage";
+@import "./pages/about";
+@import "./pages/pageNotFound";
