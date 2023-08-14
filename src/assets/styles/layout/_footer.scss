@@ -1,12 +1,8 @@
 footer{
     @include flex($direction: column, $align:center, $gap:29px );
-    
     padding:66px 0 29px 0;
     background-color:black;
     color: white;
     position:sticky;
     bottom:0;
-    img{
-        width:122px;
-    }
 }

@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "../assets/images/logo_kasa_color.svg";
+import Logo from "./Logo";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header>
       <Link to="/">
-        <img src={logo} alt="" />
+        <Logo />
+        {/* <img src={logo} alt="" /> */}
       </Link>
 
       <NavBar />

@@ -1,0 +1,18 @@
+header {
+  .logo {
+    svg {
+      margin-top: 45px;
+      width: 211px;
+      height: 68px;
+      fill: $primary-color;
+    }
+  }
+}
+footer {
+  .logo {
+    svg {
+      width: 122px;
+      fill: white;
+    }
+  }
+}
