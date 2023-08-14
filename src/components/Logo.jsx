@@ -3,8 +3,7 @@ export default function Logo() {
   return (
     <div className="logo">
       <svg
-        width="122"
-        height="40"
+        
         viewBox="0 0 122 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
