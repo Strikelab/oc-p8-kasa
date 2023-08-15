@@ -7,7 +7,7 @@
   font-weight: 500;
 }
 
-.box-width {
+.page-container {
   @include flex($direction: column, $gap: 43px, $align: center);
   margin: auto;
   max-width: 1240px;
