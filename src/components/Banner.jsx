@@ -5,6 +5,7 @@ export default function Banner(props) {
   console.log(classNameValue);
   return (
     <div className={`${classNameValue} banner`}>
+      {/* we need display title only on the homepage */}
       {!classNameValue && <p>Chez vous, partout et ailleurs</p>}
     </div>
   );
