@@ -1,0 +1,18 @@
+.page-not-found {
+  @include flex($direction: column, $align: center, $gap: 139px);
+  padding-top: 129px;
+  padding-bottom:139px; 
+  color: $primary-color;
+  h2 {
+    line-height: 263px;
+    font-weight: 700;
+    font-size: 263px;
+  }
+  p {
+    font-size: 26px;
+    font-weight: 500;
+  }
+  a {
+    color: $primary-color;
+  }
+}
