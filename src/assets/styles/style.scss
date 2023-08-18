@@ -5,11 +5,9 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
-
 // base
 @import "./base/reset";
 @import "./base/global";
-
 
 // layout
 @import "./layout/header";
@@ -19,6 +17,7 @@
 @import "./components/logo";
 @import "./components/navbar";
 @import "./components/banner";
+@import "./components/card";
 
 // pages
 @import "./pages/homepage";

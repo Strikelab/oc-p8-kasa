@@ -1,21 +1,29 @@
 .banner {
   @include flex($align: center, $justify: center);
-  width: 100%;
+  width: 99.9%;
   height: 223px;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(../../images/banner-img-1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 25px;
-  font-size: 48px;
-  color: white;
+  position: relative;
 
-  &__about {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(../../images/banner-img-2.png);
+  h1 {
+    font-size: 48px;
+    color: white;
+    z-index: +1;
+  }
+  &__homepage:after {
+    background: url(../../images/banner-img-1.png);
+  }
+  &__about:after {
+    background: url(../../images/banner-img-2.png);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    z-index: 0;
+    filter: brightness(70%);
+    border-radius: 25px;
   }
 }
