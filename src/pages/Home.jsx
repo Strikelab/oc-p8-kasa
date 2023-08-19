@@ -6,7 +6,7 @@ export default function Home() {
   const [logements, setLogements] = useState([]);
   const titleContent = <h1>Chez vous partout et ailleurs</h1>;
   const classNameValue = "banner__homepage";
-
+  const apiUrl="http://localhost:3030/logements"
   //comportements
   // This code will fetch the logements datas from the server when the component is first rendered.
   // The data will then be stored in the `logements` state. The render function will use the
@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     // Fetch the data from the server.
     //TO DO : handle fetch errors
-    fetch("https://mocki.io/v1/edf90915-de99-43ce-a19d-ea9143957462")
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((json) => {
         // Set the data state.
