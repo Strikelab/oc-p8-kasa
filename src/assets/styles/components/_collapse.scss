@@ -1,0 +1,33 @@
+.collapse {
+    position: relative;
+    h3 {
+        position: relative;
+        color: white;
+        background-color: $primary-color;
+        font-size: 18px;
+        font-weight: $medium;
+        line-height: 52px;
+        height: 52px;
+        border-radius: 10px;
+        padding-left: 10px;
+        z-index: +1;
+    }
+    &__button {
+        position: absolute;
+        z-index: +2;
+        // transform: rotate(180deg);
+        right: 15px;
+        top: 11px;
+    }
+    &__content {
+        line-height: 1.426rem;
+        font-weight: $regular;
+        color: $primary-color;
+        background-color: $secondary-color;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-right: 28px;
+        padding-top: 77px;
+        transform: translateY(-52px);
+    }
+}

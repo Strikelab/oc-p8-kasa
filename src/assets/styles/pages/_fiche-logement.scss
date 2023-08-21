@@ -1,16 +1,25 @@
 .fiche-logement {
-    gap: 0px;
+    @include flex($justify: space-between);
+    flex-wrap: wrap;
+    &__head {
+        width: 80%;
+    }
     &__title {
         color: $primary-color;
         font-weight: $medium;
         align-self: flex-start;
         font-size: 36px;
+        line-height: 51px;
     }
     &__location {
+        font-size: 18px;
+        font-weight: $medium;
         align-self: flex-start;
         color: $primary-color;
+        line-height: 26px;
     }
     &__cover {
+        margin-bottom: 30px;
         height: 415px;
         width: 100%;
         border-radius: 25px;
@@ -18,15 +27,27 @@
     &__host {
         color: $primary-color;
         @include flex($gap: 10px);
-        align-self: flex-end;
+        align-self: flex-start;
+        justify-self: flex-end;
         &__avatar {
+            height: 64px;
+            width: 64px;
             border-radius: 50%;
         }
         &__name {
+            max-width: 90px;
+            text-align: right;
             align-self: center;
             color: inherit;
             font-size: 18px;
             font-weight: $medium;
+            line-height: 26px;
+        }
+    }
+    &__informations {
+        @include flex($gap: 76px);
+        .collapse {
+            width: 50%;
         }
     }
 }

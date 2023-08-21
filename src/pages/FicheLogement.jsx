@@ -8,8 +8,17 @@ import Collapse from '../components/Collapse'
 export default function FicheLogement() {
     //we get datas from HomePage Cards Link state
     const logementDatas = { ...useLocation().state }
-    const { id, title, description, host, cover, location, tags, rating } =
-        logementDatas
+    const {
+        id,
+        title,
+        description,
+        host,
+        cover,
+        location,
+        tags,
+        rating,
+        equipments,
+    } = logementDatas
 
     if (id) {
         return (
@@ -19,9 +28,11 @@ export default function FicheLogement() {
                     src={cover}
                     alt="avatar"
                 />
+                <div className="fiche-logement__head">
+                    <h2 className="fiche-logement__title">{title}</h2>
+                    <p className="fiche-logement__location">{location}</p>
+                </div>
 
-                <h2 className="fiche-logement__title">{title}</h2>
-                <p className="fiche-logement__location">{location}</p>
                 <div className="fiche-logement__host">
                     <p className="fiche-logement__host__name">{host.name}</p>
                     <img
@@ -32,11 +43,12 @@ export default function FicheLogement() {
                 </div>
                 <Tags tags={tags} />
                 <Rating rating={parseInt(rating)} />
-                <Collapse />
-                <Collapse />
+                <div className="fiche-logement__informations">
+                    <Collapse title="Description" datas={description} />
+                    <Collapse title="Équipements" datas={equipments} />
+                </div>
             </div>
         )
-       
     } else {
         return <PageNotFound />
     }
