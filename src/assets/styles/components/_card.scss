@@ -15,8 +15,10 @@
         padding: 20px;
         color: white;
         position: relative;
+        transition: transform 500ms ease-in-out;
         &:hover {
             cursor: pointer;
+            transform: scale(1.01);
         }
         &:after {
             content: '';
@@ -44,6 +46,11 @@
             top: 0;
             left: 0;
             object-fit: cover;
+            transition: opacity 500ms ease-in-out;
+            z-index: +1;
+            &:hover {
+                opacity: 0;
+            }
         }
         h2 {
             z-index: +1;
