@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import PageNotFound from './PageNotFound'
 import Tags from '../components/Tags'
@@ -6,6 +7,11 @@ import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
 
 export default function FicheLogement() {
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }, [])
+
     //we get datas from HomePage Cards Link state
     const logementDatas = { ...useLocation().state }
     const {
