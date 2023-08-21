@@ -18,6 +18,9 @@
         // transform: rotate(180deg);
         right: 15px;
         top: 11px;
+        &:active {
+            transform: rotate(180deg);
+        }
     }
     &__content {
         line-height: 1.426rem;
