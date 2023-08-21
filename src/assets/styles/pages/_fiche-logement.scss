@@ -1,0 +1,32 @@
+.fiche-logement {
+    gap: 0px;
+    &__title {
+        color: $primary-color;
+        font-weight: $medium;
+        align-self: flex-start;
+        font-size: 36px;
+    }
+    &__location {
+        align-self: flex-start;
+        color: $primary-color;
+    }
+    &__cover {
+        height: 415px;
+        width: 100%;
+        border-radius: 25px;
+    }
+    &__host {
+        color: $primary-color;
+        @include flex($gap: 10px);
+        align-self: flex-end;
+        &__avatar {
+            border-radius: 50%;
+        }
+        &__name {
+            align-self: center;
+            color: inherit;
+            font-size: 18px;
+            font-weight: $medium;
+        }
+    }
+}

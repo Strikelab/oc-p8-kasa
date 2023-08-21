@@ -1,0 +1,14 @@
+.tags {
+    color: red;
+    align-self: flex-start;
+
+    @include flex($gap: 10px);
+    .tag {
+        height: 25px;
+        line-height: 25px;
+        border-radius: 10px;
+        color: white;
+        background-color: $primary-color;
+        padding: 0 37px;
+    }
+}
