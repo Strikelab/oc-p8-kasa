@@ -1,44 +1,53 @@
 .cards-container {
-  max-width: 1240px;
+    max-width: 1240px;
 
-  @include flex($gap: 60px);
-  flex-wrap: wrap;
-  background-color: $secondary-color;
-  border-radius: 25px;
-  padding: 56px 50px 43px 50px;
-  .card {
-    @include flex();
-    border-radius: 10px;
-    width: 340px;
-    height: 360px;
-    background-color: $primary-color;
-    padding: 20px;
-    color: white;
-    position: relative;
-    &:hover {
-      cursor: pointer;
+    @include flex($gap: 60px);
+    flex-wrap: wrap;
+    background-color: $secondary-color;
+    border-radius: 25px;
+    padding: 56px 50px 43px 50px;
+    .card {
+        @include flex();
+        border-radius: 10px;
+        width: 340px;
+        height: 360px;
+        background-color: $primary-color;
+        padding: 20px;
+        color: white;
+        position: relative;
+        &:hover {
+            cursor: pointer;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            background: black;
+            opacity: 0.5;
+            background: linear-gradient(
+                184deg,
+                rgba(255, 255, 255, 0.5) 0%,
+                rgba(0, 0, 0, 0.5) 100%
+            );
+        }
+        &__thumbnail {
+            position: absolute;
+            border-radius: inherit;
+            width: inherit;
+            height: inherit;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        h2 {
+            z-index: +1;
+            align-self: end;
+        }
     }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: inherit;
-      height: inherit;
-      border-radius: inherit;
-      background: black;
-      opacity: 0.5;
-      background: linear-gradient(
-        184deg,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-      );
-    }
-    h2 {
-      z-index: +1;
-      align-self: end;
-    }
-  }
 }
