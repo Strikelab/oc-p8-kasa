@@ -1,0 +1,11 @@
+.rating {
+    @include flex($gap: 4px);
+    height: 36px;
+    align-self: flex-end;
+    .star {
+        padding: 5.5px;
+        height: 36px;
+        width: 36px;
+        align-self: center;
+    }
+}

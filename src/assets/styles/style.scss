@@ -1,27 +1,28 @@
 //  vendors
-@import "./vendors/google-fonts";
+@import './vendors/google-fonts';
 
 // // utils
-@import "./utils/variables";
-@import "./utils/mixins";
+@import './utils/variables';
+@import './utils/mixins';
 
 // base
-@import "./base/reset";
-@import "./base/global";
+@import './base/reset';
+@import './base/global';
 
 // layout
-@import "./layout/header";
-@import "./layout/footer";
+@import './layout/header';
+@import './layout/footer';
 
 // components
-@import "./components/logo";
-@import "./components/navbar";
-@import "./components/banner";
-@import "./components/card";
-@import "./components/tags";
+@import './components/logo';
+@import './components/navbar';
+@import './components/banner';
+@import './components/card';
+@import './components/tags';
+@import './components/rating';
 
 // pages
-@import "./pages/homepage";
-@import "./pages/about";
-@import "./pages/page-not-found";
-@import "./pages/fiche-logement";
+@import './pages/homepage';
+@import './pages/about';
+@import './pages/page-not-found';
+@import './pages/fiche-logement';
