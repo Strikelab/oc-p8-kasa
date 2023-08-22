@@ -6,7 +6,7 @@ import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
 
 export default function FicheLogement() {
-    //state
+    //---state
     //logement Datas
     const [logement, setLogement] = useState({})
     //Waiting for the API response
@@ -14,6 +14,7 @@ export default function FicheLogement() {
     // get logement id from url
     const { idLogement } = useParams()
 
+    //---Comportments
     useEffect(() => {
         // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -44,7 +45,7 @@ export default function FicheLogement() {
             })
     }, [idLogement])
 
-    //display
+    //---display
     if (logement.error === 404) {
         return <Navigate to="/404_Not_found" />
     } else if (loading) {
