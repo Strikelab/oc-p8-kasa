@@ -26,7 +26,7 @@ export default function FicheLogement() {
         equipments,
     } = logementDatas
 
-    if (id) {
+    if (id) { // check if id has been sent by card link
         return (
             <div className="fiche-logement page-container">
                 <img
