@@ -8,15 +8,7 @@ export default function Collapse({ datas, title }) {
     const [isOpen, setIsOpen] = useState(false)
 
     //Comportments
-    const toggle = () => {
-        if (isOpen) {
-            console.log('Cet élément est ouvert, il va se fermer')
-            setIsOpen(false)
-        } else {
-            console.log("cet élément est fermé, il va s'ouvrir")
-            setIsOpen(true)
-        }
-    }
+    const toggle = () => setIsOpen(!isOpen)
 
     //display
     return (
@@ -27,7 +19,7 @@ export default function Collapse({ datas, title }) {
                 src={arrow}
                 alt="collapse button"
             />
-            {console.log(`Etat du collapse : ${isOpen ? 'ouvert' : 'fermé'}`)}
+
             <h3>{title}</h3>
             {typeof datas === 'string' ? (
                 <p className={`collapse__content ${isOpen ? 'active' : ''}`}>
