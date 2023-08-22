@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import arrow from '../assets/images/arrow.png'
 
 export default function Collapse({ datas, title }) {
@@ -9,7 +9,8 @@ export default function Collapse({ datas, title }) {
 
     //Comportments
     const toggle = () => setIsOpen(!isOpen)
-
+    const parentRef = useRef()
+    // if (parentRef.current) console.log(parentRef.current.scrollHeight)
     //display
     return (
         <div className="collapse">
@@ -22,15 +23,37 @@ export default function Collapse({ datas, title }) {
 
             <h3>{title}</h3>
             {typeof datas === 'string' ? (
-                <p className={`collapse__content ${isOpen ? 'active' : ''}`}>
-                    {datas}
-                </p>
+                <div
+                    ref={parentRef}
+                    className={`collapse__content-parent ${
+                        isOpen ? 'active' : ''
+                    }`}
+                    style={
+                        isOpen
+                            ? { height: parentRef.current.scrollHeight + 'px' }
+                            : { height: '0px' }
+                    }
+                >
+                    <p className="collapse__content">{datas} </p>
+                </div>
             ) : (
-                <ul className={`collapse__content ${isOpen ? 'active' : ''}`}>
-                    {datas.map((data, index) => (
-                        <li key={index}>{data}</li>
-                    ))}
-                </ul>
+                <div
+                    ref={parentRef}
+                    className={`collapse__content-parent ${
+                        isOpen ? 'active' : ''
+                    }`}
+                    style={
+                        isOpen
+                            ? { height: parentRef.current.scrollHeight + 'px' }
+                            : { height: '0px' }
+                    }
+                >
+                    <ul className="collapse__content">
+                        {datas.map((data, index) => (
+                            <li key={index}>{data}</li>
+                        ))}
+                    </ul>
+                </div>
             )}
         </div>
     )

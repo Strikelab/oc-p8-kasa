@@ -28,17 +28,20 @@
         font-weight: $regular;
         color: $primary-color;
         background-color: $secondary-color;
+        margin-top: -10px;
         padding-left: 20px;
+        padding-top: 35px;
         padding-bottom: 20px;
         padding-right: 28px;
-        padding-top: 35px;
-        margin-top: -10px;
-        display: none;
-        overflow: hidden;
-        &.active {
-            display: block;
-            overflow: visible;
-            border-bottom: none;
+        border-bottom: none;
+
+        &-parent {
+            height: 0px;
+            overflow: hidden;
+            transition: height ease 0.5s;
+            &.active {
+                height: 100px;
+            }
         }
     }
 }
