@@ -66,3 +66,5 @@ export default function Collapse({ datas, title }) {
         </div>
     )
 }
+// collapse element animation inspiration:
+// https://www.youtube.com/watch?v=4F8EYGao9pc
