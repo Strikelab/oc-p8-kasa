@@ -8,7 +8,7 @@ export default function Collapse({ datas, title }) {
     const [isOpen, setIsOpen] = useState(false)
 
     //---Comportments
-    
+
     // This toogle state value of collapsible element
     const toggle = () => setIsOpen(!isOpen)
 
@@ -43,7 +43,6 @@ export default function Collapse({ datas, title }) {
                             : { height: '0px' }
                     }
                 >
-
                     {/* TO DO voir à déplacer le if */}
                     <p className="collapse__content">{datas} </p>
                 </div>
