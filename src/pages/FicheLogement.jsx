@@ -49,7 +49,7 @@ export default function FicheLogement() {
                 </div>
                 <Tags tags={tags} />
                 <Rating rating={parseInt(rating)} />
-                <div className="fiche-logement__informations">
+                <div className="fiche-logement__collapse-container">
                     <Collapse title="Description" datas={description} />
                     <Collapse title="Équipements" datas={equipments} />
                 </div>

@@ -12,11 +12,13 @@ export default function About() {
     const { aboutContent } = datas
 
     return (
-        <div className="page-container">
+        <div className="about">
             <Banner classNameValue="banner__about" />
-            {aboutContent.map(({ title, content, id }) => (
-                <Collapse key={id} title={title} datas={content} />
-            ))}
+            <div className="about__collapse-container">
+                {aboutContent.map(({ title, content, id }) => (
+                    <Collapse key={id} title={title} datas={content} />
+                ))}
+            </div>
         </div>
     )
 }

@@ -44,8 +44,9 @@
             line-height: 26px;
         }
     }
-    &__informations {
+    &__collapse-container {
         @include flex($gap: 76px);
+        width: 100%;
         .collapse {
             width: 50%;
         }

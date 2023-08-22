@@ -1,0 +1,7 @@
+.about {
+    @extend .page-container;
+    &__collapse-container {
+        @include flex($direction: column, $gap: 30px);
+        width: 100%;
+    }
+}
