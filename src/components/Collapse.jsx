@@ -43,6 +43,8 @@ export default function Collapse({ datas, title }) {
                             : { height: '0px' }
                     }
                 >
+
+                    {/* TO DO voir à déplacer le if */}
                     <p className="collapse__content">{datas} </p>
                 </div>
             ) : (

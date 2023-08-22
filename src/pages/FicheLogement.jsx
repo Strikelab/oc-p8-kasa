@@ -1,61 +1,89 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useLocation } from 'react-router'
-import PageNotFound from './PageNotFound'
+import { useEffect, useState } from 'react'
+import { useParams, Navigate } from 'react-router'
 import Tags from '../components/Tags'
 import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
 
 export default function FicheLogement() {
+    //state
+    //logement Datas
+    const [logement, setLogement] = useState({})
+    //Waiting for the API response
+    const [loading, setLoading] = useState(true)
+    // get logement id from url
+    const { idLogement } = useParams()
+
     useEffect(() => {
         // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-    }, [])
+    }, [idLogement])
 
-    //we get datas from HomePage Cards Link state
-    const logementDatas = { ...useLocation().state }
-    const {
-        id,
-        title,
-        description,
-        host,
-        cover,
-        location,
-        tags,
-        rating,
-        equipments,
-    } = logementDatas
+    useEffect(() => {
+        // call API on logement id modification
+        const apiUrl = `http://localhost:3030/logements/${idLogement}`
+        // Fetch the data from the server.
+        fetch(apiUrl)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else if (response.status === 404) {
+                    setLogement({ error: 404 })
+                    throw new Error('404 NOT FOUND')
+                } else {
+                    throw new Error('Something went wrong')
+                }
+            })
+            .then((json) => {
+                // Set the data state.
+                setLogement(json)
+                setLoading(false)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [idLogement])
 
-    if (id) { // check if id has been sent by card link
+    //display
+    if (logement.error === 404) {
+        return <Navigate to="/404_Not_found" />
+    } else if (loading) {
+        return <p>chargement...</p>
+    } else {
         return (
             <div className="fiche-logement page-container">
                 <img
                     className="fiche-logement__cover"
-                    src={cover}
+                    src={logement.cover}
                     alt="avatar"
                 />
                 <div className="fiche-logement__head">
-                    <h2 className="fiche-logement__title">{title}</h2>
-                    <p className="fiche-logement__location">{location}</p>
+                    <h2 className="fiche-logement__title">{logement.title}</h2>
+                    <p className="fiche-logement__location">
+                        {logement.location}
+                    </p>
                 </div>
 
                 <div className="fiche-logement__host">
-                    <p className="fiche-logement__host__name">{host.name}</p>
+                    <p className="fiche-logement__host__name">
+                        {logement.host.name}
+                    </p>
                     <img
                         className="fiche-logement__host__avatar"
-                        src={host.picture}
+                        src={logement.host.picture}
                         alt="avatar"
                     />
                 </div>
-                <Tags tags={tags} />
-                <Rating rating={parseInt(rating)} />
+                <Tags tags={logement.tags} />
+                <Rating rating={parseInt(logement.rating)} />
                 <div className="fiche-logement__collapse-container">
-                    <Collapse title="Description" datas={description} />
-                    <Collapse title="Équipements" datas={equipments} />
+                    <Collapse
+                        title="Description"
+                        datas={logement.description}
+                    />
+                    <Collapse title="Équipements" datas={logement.equipments} />
                 </div>
             </div>
         )
-    } else {
-        return <PageNotFound />
     }
 }
