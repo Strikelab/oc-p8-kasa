@@ -58,10 +58,10 @@ export default function Slider({ pictures }) {
             )}
 
             {pictures.length > 1 && (
-                <SliderBtn moveSlide={nextSlide} direction={'next'} />
+                <SliderBtn showSlide={nextSlide} direction={'next'} />
             )}
             {pictures.length > 1 && (
-                <SliderBtn moveSlide={previousSlide} direction={'previous'} />
+                <SliderBtn showSlide={previousSlide} direction={'previous'} />
             )}
         </div>
     )
