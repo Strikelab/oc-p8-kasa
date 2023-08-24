@@ -1,0 +1,34 @@
+.slider {
+    position: relative;
+    width: 100%;
+    height: 415px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity ease-in-out 0.4s;
+        img {
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+    &__slide-active {
+        opacity: 1;
+    }
+
+    &__counter {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        font-weight: $medium;
+        color: white;
+    }
+}

@@ -4,6 +4,7 @@ import { useParams, Navigate } from 'react-router'
 import Tags from '../components/Tags'
 import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
+import Slider from '../components/Slider'
 
 export default function FicheLogement() {
     //---state
@@ -22,7 +23,7 @@ export default function FicheLogement() {
 
     useEffect(() => {
         // call API on logement id modification
-        const apiUrl = `http://localhost:3030/logements/${idLogement}`
+        const apiUrl = `http://192.168.1.2:3030/logements/${idLogement}`
         // Fetch the data from the server.
         fetch(apiUrl)
             .then((response) => {
@@ -53,11 +54,12 @@ export default function FicheLogement() {
     } else {
         return (
             <div className="fiche-logement page-container">
-                <img
+                <Slider pictures={logement.pictures} />
+                {/* <img
                     className="fiche-logement__cover"
                     src={logement.cover}
                     alt="avatar"
-                />
+                /> */}
                 <div className="fiche-logement__head">
                     <h2 className="fiche-logement__title">{logement.title}</h2>
                     <p className="fiche-logement__location">

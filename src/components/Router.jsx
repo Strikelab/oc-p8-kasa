@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
-import Test from './Test'
 import Home from '../pages/Home'
 import FicheLogement from '../pages/FicheLogement'
 import PageNotFound from '../pages/PageNotFound'
@@ -20,7 +19,6 @@ export default function Router() {
                     path="/logement/:idLogement"
                     element={<FicheLogement />}
                 />
-                <Route path="/test" element={<Test />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Footer />

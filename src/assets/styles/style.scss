@@ -1,7 +1,7 @@
 //  vendors
 @import './vendors/google-fonts';
 
-// // utils
+// utils
 @import './utils/variables';
 @import './utils/mixins';
 
@@ -21,6 +21,8 @@
 @import './components/tags';
 @import './components/rating';
 @import './components/collapse';
+@import './components/slider';
+@import './components/slider-btn';
 
 // pages
 @import './pages/homepage';
