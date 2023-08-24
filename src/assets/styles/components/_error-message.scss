@@ -1,0 +1,21 @@
+.error {
+    @include flex($direction: row, $align: center, $justify: center);
+    align-items: center;
+    height: calc((100vh - (113px + 209px)));
+    &__message {
+        @include flex($justify: center, $align: center, $gap: 15px);
+        font-weight: $regular;
+        width: 100vw;
+        height: 3rem;
+        max-width: 1440px;
+        font-size: 1.2rem;
+        background-color: pink;
+        border: 1px-solid red;
+        color: red;
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+            opacity: 0.7;
+        }
+    }
+}
