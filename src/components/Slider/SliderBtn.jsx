@@ -7,9 +7,8 @@ export default function SliderBtn({ direction, moveSlide }) {
         <button
             onClick={moveSlide}
             className={
-                direction === 'next' ? 'btn-slide next' : 'btn-slide prev'
+                direction === 'next' ? 'btn-slide btn-slide__next' : 'btn-slide btn-slide__prev'
             }
-            type="submit"
         >
             <img
                 src={direction === 'next' ? rightArrow : leftArrow}

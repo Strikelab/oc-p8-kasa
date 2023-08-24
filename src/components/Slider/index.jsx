@@ -31,14 +31,14 @@ export default function Slider({ pictures }) {
 
     //---display
     return (
-        <div className="container-slider">
+        <div className="slider">
             {pictures.map((picture, index) => {
                 return (
                     <div
                         className={
                             slideIndex === index + 1
-                                ? 'slide active-anim'
-                                : 'slide'
+                                ? 'slider__slide slider__slide-active'
+                                : 'slider__slide'
                         }
                         key={index}
                     >
@@ -50,7 +50,13 @@ export default function Slider({ pictures }) {
                     </div>
                 )
             })}
-            {/* Do not display buttons if there's only 1 picture */}
+            {/* Do not display if there's only 1 picture */}
+            {pictures.length > 1 && (
+                <div className="slider__counter">
+                    {`${slideIndex}\\${pictures.length}`}
+                </div>
+            )}
+
             {pictures.length > 1 && (
                 <SliderBtn moveSlide={nextSlide} direction={'next'} />
             )}

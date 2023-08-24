@@ -1,0 +1,25 @@
+.btn-slide {
+    @include flex($justify: flex-start);
+    width: 96px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+        height: 79px;
+    }
+    &__prev {
+        left: 0;
+        padding-left: 23px;
+    }
+
+    &__next {
+        right: 0;
+        padding-right: 23px;
+        justify-content: flex-end;
+    }
+}
