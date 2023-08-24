@@ -1,6 +1,5 @@
 .cards-container {
     max-width: 1240px;
-
     @include flex($gap: 60px);
     flex-wrap: wrap;
     background-color: $secondary-color;
@@ -9,6 +8,7 @@
     .card {
         @include flex();
         border-radius: 10px;
+        overflow: hidden;
         width: 340px;
         height: 360px;
         background-color: $primary-color;
@@ -29,7 +29,6 @@
             bottom: 0;
             width: inherit;
             height: inherit;
-            border-radius: inherit;
             background: black;
             opacity: 0.5;
             background: linear-gradient(
@@ -40,7 +39,6 @@
         }
         &__thumbnail {
             position: absolute;
-            border-radius: inherit;
             width: inherit;
             height: inherit;
             top: 0;
