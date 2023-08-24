@@ -6,13 +6,16 @@ import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
 import Slider from '../components/Slider'
 import Loader from '../components/Loader'
+import ErrorMessage from '../components/ErrorMessage'
 
 export default function FicheLogement() {
     //---state
     //logement Datas
-    const [logement, setLogement] = useState({})
+    const [logementDatas, setLogementDatas] = useState({})
+    //fetch status
+    const [status, setStatus] = useState({})
     //Waiting for the API response
-    const [loading, setLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     // get logement id from url
     const { idLogement } = useParams()
 
@@ -20,67 +23,69 @@ export default function FicheLogement() {
     useEffect(() => {
         // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-    }, [idLogement])
+    }, [])
 
     useEffect(() => {
-        // call API on logement id modification
-        const apiUrl = `http://192.168.1.2:3030/logements/${idLogement}`
-        // Fetch the data from the server.
-        fetch(apiUrl)
-            .then((response) => {
-                if (response.ok) {
-                    return response.json()
-                } else if (response.status === 404) {
-                    setLogement({ error: 404 })
-                    throw new Error('404 NOT FOUND')
-                } else {
-                    throw new Error('Something went wrong')
+        async function fetchLogmentDatas() {
+            try {
+                const url = `http://192.168.1.2:3030/logements/${idLogement}`
+                setIsLoading(true)
+                const response = await fetch(url)
+                if (response.status === 404) {
+                    return setStatus({ error: response.status })
                 }
-            })
-            .then((json) => {
-                // Set the data state.
-                setLogement(json)
-                setLoading(false)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+                const logementDatas = await response.json()
+                setLogementDatas(logementDatas)
+            } catch (error) {
+                setStatus({ error: error.message })
+            } finally {
+                setIsLoading(false)
+            }
+        }
+        fetchLogmentDatas()
     }, [idLogement])
 
     //---display
-    if (logement.error === 404) {
+    if (status.error === 404) {
         return <Navigate to="/404_Not_found" />
-    } else if (loading) {
+    } else if (status.error) {
+        return <ErrorMessage error={status.error} />
+    } else if (isLoading) {
         return <Loader />
     } else {
         return (
             <div className="fiche-logement page-container">
-                <Slider pictures={logement.pictures} />
+                <Slider pictures={logementDatas.pictures} />
                 <div className="fiche-logement__head">
-                    <h2 className="fiche-logement__title">{logement.title}</h2>
+                    <h2 className="fiche-logement__title">
+                        {logementDatas.title}
+                    </h2>
                     <p className="fiche-logement__location">
-                        {logement.location}
+                        {logementDatas.location}
                     </p>
                 </div>
 
                 <div className="fiche-logement__host">
                     <p className="fiche-logement__host__name">
-                        {logement.host.name}
+                        {logementDatas.host.name}
                     </p>
                     <img
                         className="fiche-logement__host__avatar"
-                        src={logement.host.picture}
+                        src={logementDatas.host.picture}
                         alt="avatar"
                     />
                 </div>
-                <Tags tags={logement.tags} />
-                <Rating rating={parseInt(logement.rating)} />
+                <Tags tags={logementDatas.tags} />
+                <Rating rating={parseInt(logementDatas.rating)} />
                 <div className="fiche-logement__collapse-container">
                     <Collapse
                         title="Description"
-                        datas={logement.description}
+                        datas={logementDatas.description}
                     />
-                    <Collapse title="Équipements" datas={logement.equipments} />
+                    <Collapse
+                        title="Équipements"
+                        datas={logementDatas.equipments}
+                    />
                 </div>
             </div>
         )
