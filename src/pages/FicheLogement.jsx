@@ -5,6 +5,7 @@ import Tags from '../components/Tags'
 import Rating from '../components/Rating'
 import Collapse from '../components/Collapse'
 import Slider from '../components/Slider'
+import Loader from '../components/Loader'
 
 export default function FicheLogement() {
     //---state
@@ -50,16 +51,11 @@ export default function FicheLogement() {
     if (logement.error === 404) {
         return <Navigate to="/404_Not_found" />
     } else if (loading) {
-        return <p>chargement...</p>
+        return <Loader />
     } else {
         return (
             <div className="fiche-logement page-container">
                 <Slider pictures={logement.pictures} />
-                {/* <img
-                    className="fiche-logement__cover"
-                    src={logement.cover}
-                    alt="avatar"
-                /> */}
                 <div className="fiche-logement__head">
                     <h2 className="fiche-logement__title">{logement.title}</h2>
                     <p className="fiche-logement__location">
