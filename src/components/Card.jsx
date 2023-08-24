@@ -10,7 +10,7 @@ export default function Card({ logementDatas }) {
                 src={cover}
                 alt="aperçu du logement"
             />
-            <h2 className="card__title">{title}</h2>
+            <h2 className={'card__title'}>{title}</h2>
         </Link>
     )
 }

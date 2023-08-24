@@ -8,7 +8,7 @@ export default function Home() {
 
     const titleContent = <h1>Chez vous partout et ailleurs</h1>
     const classNameValue = 'banner__homepage'
-    const apiUrl = 'http://localhost:3030/logements'
+    const apiUrl = 'http://192.168.1.2:3030/logements'
 
     //---comportements
     // This code will fetch the logements datas from the server when the component is first rendered.
