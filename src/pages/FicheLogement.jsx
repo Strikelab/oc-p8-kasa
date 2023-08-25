@@ -28,7 +28,8 @@ export default function FicheLogement() {
     useEffect(() => {
         async function fetchLogmentDatas() {
             try {
-                const url = `http://192.168.1.2:3030/logements/${idLogement}`
+                const url = `http://localhost:3030/logements/${idLogement}`
+
                 setIsLoading(true)
                 const response = await fetch(url)
                 if (response.status === 404) {
