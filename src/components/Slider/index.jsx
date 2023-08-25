@@ -3,29 +3,28 @@ import SliderBtn from './SliderBtn'
 
 export default function Slider({ pictures }) {
     //---state
-    const [slideIndex, setSlideIndex] = useState(1)
+    const [slideAnim, setSlideAnim] = useState({
+        index: 1,
+        inProgress: false,
+    })
 
     //---comportments
-    // do manipulations on a state copy
-    let slideIndexCopy = slideIndex
+
     // slide forward and loop
+    //##TO DO : prevent spam click
     const nextSlide = () => {
-        if (slideIndexCopy !== pictures.length) {
-            slideIndexCopy += 1
-            setSlideIndex(slideIndexCopy)
+        if (slideAnim.index !== pictures.length) {
+            setSlideAnim({ index: slideAnim.index + 1, inProgress: true })
         } else {
-            slideIndexCopy = 1
-            setSlideIndex(slideIndexCopy)
+            setSlideAnim({ index: 1, inProgress: true })
         }
     }
     // slide backward and loop
     const previousSlide = () => {
-        if (slideIndexCopy !== 1) {
-            slideIndexCopy -= 1
-            setSlideIndex(slideIndexCopy)
+        if (slideAnim.index !== 1) {
+            setSlideAnim({ index: slideAnim.index - 1, inProgress: true })
         } else {
-            slideIndexCopy = pictures.length
-            setSlideIndex(slideIndexCopy)
+            setSlideAnim({ index: pictures.length, inProgress: true })
         }
     }
 
@@ -36,7 +35,7 @@ export default function Slider({ pictures }) {
                 return (
                     <div
                         className={
-                            slideIndex === index + 1
+                            slideAnim.index === index + 1
                                 ? 'slider__slide slider__slide-active'
                                 : 'slider__slide'
                         }
@@ -53,7 +52,7 @@ export default function Slider({ pictures }) {
             {/* Do not display if there's only 1 picture */}
             {pictures.length > 1 && (
                 <div className="slider__counter">
-                    {`${slideIndex}\\${pictures.length}`}
+                    {`${slideAnim.index}\\${pictures.length}`}
                 </div>
             )}
 
