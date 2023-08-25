@@ -8,6 +8,11 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    opacity: 0.5;
+    transition: opacity ease-in-out 300ms;
+    &:hover {
+        opacity: 1;
+    }
 
     img {
         height: 79px;
