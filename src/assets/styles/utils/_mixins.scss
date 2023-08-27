@@ -25,31 +25,27 @@ $mobile-small: 375px;
 
 @mixin screen-size($size) {
     @if $size == 'desktop-large' {
-        @media (min-width: calc($desktop-large + 1px)) {
-            @content;
-        }
-    } @else if $size == 'desktop' {
-        @media (min-width: calc($tablet-large + 1px)) {
+        @media (min-width: calc($desktop-large)) {
             @content;
         }
     } @else if $size == 'tablet-large' {
-        @media (min-width: calc($tablet-small + 1px)) {
+        @media (max-width: calc($tablet-large)) {
             @content;
         }
     } @else if $size == 'tablet-small' {
-        @media (min-width: calc($mobile-large + 1px)) {
+        @media (max-width: calc($tablet-small)) {
             @content;
         }
     } @else if $size == 'mobile-large' {
-        @media (min-width: calc($mobile-medium + 1px)) {
+        @media (max-width: calc($mobile-large)) {
             @content;
         }
     } @else if $size == 'mobile-medium' {
-        @media (min-width: calc($mobile-small + 1px)) {
+        @media (max-width: calc($mobile-medium)) {
             @content;
         }
     } @else if $size == 'mobile-small' {
-        @media (max-width: $mobile-small) {
+        @media (max-width: calc($mobile-small - 1px)) {
             @content;
         }
     }
