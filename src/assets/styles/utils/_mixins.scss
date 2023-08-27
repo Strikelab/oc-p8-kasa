@@ -1,13 +1,76 @@
 // Flexbox
 @mixin flex(
-  $direction: initial,//row
-  $justify: initial,  //flex-start
-  $align: initial,    //flex-start
-  $gap: initial       //0
+    $direction: initial,
+    //row
+    $justify: initial,
+    //flex-start
+    $align: initial,
+    //flex-start
+    $gap: initial //0
 ) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// Media Queries - Mobile First
+// @mixin for-size($size) {
+//   @if $size == mobile-medium {
+//     @media (min-width: 375px) {
+//       @content;
+//     }
+//   } @else if $size == tablet {
+//     @media (min-width: 768px) {
+//       @content;
+//     }
+//   } @else if $size == desktop {
+//     @media (min-width: 1024px) {
+//       @content;
+//     }
+//   } @else if $size == large-desktop {
+//     @media (min-width: 1440px) {
+//       @content;
+//     }
+//   }
+// }
+//Media Queries - Desktop First
+$desktop-large: 1440px;
+$tablet-large: 1024px;
+$tablet-small: 768px;
+$mobile-large: 640px;
+$mobile-medium: 425px;
+$mobile-small: 375px;
+
+@mixin screen-size($size) {
+    @if $size == 'desktop-large' {
+        @media (min-width: calc($desktop-large + 1px)) {
+            @content;
+        }
+    } @else if $size == 'desktop' {
+        @media (min-width: calc($tablet-large + 1px)) {
+            @content;
+        }
+    } @else if $size == 'tablet-large' {
+        @media (min-width: calc($tablet-small + 1px)) {
+            @content;
+        }
+    } @else if $size == 'tablet-small' {
+        @media (min-width: calc($mobile-large + 1px)) {
+            @content;
+        }
+    } @else if $size == 'mobile-large' {
+        @media (min-width: calc($mobile-medium + 1px)) {
+            @content;
+        }
+    } @else if $size == 'mobile-medium' {
+        @media (min-width: calc($mobile-small + 1px)) {
+            @content;
+        }
+    } @else if $size == 'mobile-small' {
+        @media (max-width: $mobile-small) {
+            @content;
+        }
+    }
 }

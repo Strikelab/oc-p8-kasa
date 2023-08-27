@@ -1,14 +1,38 @@
 .active {
-  border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
 }
 
 header {
-  @include flex($direction: row, $justify: space-between);
-  max-width: 1240px;
-  margin: auto;
-  background-color: white;
-  position: sticky;
-  top: 0px;
-  height: calc(45px + 68px);
-  z-index: +2;
+    @include flex($direction: row, $justify: space-between);
+    max-width: 1240px;
+    width:100%;
+    margin: auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    height: calc(45px + 68px);
+    z-index: +2;
+
+    @include screen-size(mobile-small) {
+        background-color: rgb(197, 218, 41);
+    }
+    @include screen-size(mobile-medium) {
+        background-color: rgb(73, 222, 54);
+    }
+    @include screen-size(mobile-large) {
+        background-color: rgb(50, 216, 150);
+    }
+
+    @include screen-size(tablet-large) {
+        background-color: rgb(91, 56, 217);
+    }
+    @include screen-size(tablet-small) {
+        background-color: rgb(18, 143, 215);
+    }
+    @include screen-size(desktop) {
+        background-color: rgb(206, 76, 200);
+    }
+    @include screen-size(desktop-large) {
+        background-color: pink;
+    }
 }
