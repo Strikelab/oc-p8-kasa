@@ -15,5 +15,11 @@
     @include flex($direction: column, $gap: 43px, $align: center);
     margin: auto;
     max-width: 1240px;
-    padding: 50px 0;
+    padding: 50px 20px 0px 20px;
+    @include screen-size(desktop-large) {
+        padding: 50px 0px 0px 0px;
+    }
+    @include screen-size(mobile-large) {
+        padding: 20px 10px 0px 10px;
+    }
 }
