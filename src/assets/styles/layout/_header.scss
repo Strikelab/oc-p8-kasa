@@ -12,7 +12,9 @@ header {
     position: sticky;
     top: 0px;
     padding: 45px 20px 0 20px;
-    z-index: 10000;
+    // height: calc(45px + 68px);
+    z-index: +2;
+   
 
     @include screen-size(desktop-large) {
         padding: 45px 0 0 0;
