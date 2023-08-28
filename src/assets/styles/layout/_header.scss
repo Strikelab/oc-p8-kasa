@@ -1,6 +1,3 @@
-.active {
-    border-bottom: 1px solid $primary-color;
-}
 
 header {
     @include flex($direction: row, $justify: space-between);

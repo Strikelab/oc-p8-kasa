@@ -9,7 +9,11 @@ nav {
         display: block;
         text-decoration: none;
         color: $primary-color;
+        &.active {
+            border-bottom: 1px solid $primary-color;
+        }
     }
+
     @include screen-size(mobile-large) {
         ul {
             gap: 26px;
@@ -20,5 +24,4 @@ nav {
             text-transform: uppercase;
         }
     }
-    
 }
