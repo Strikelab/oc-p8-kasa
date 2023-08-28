@@ -1,13 +1,19 @@
 footer {
-  @include flex($direction: column, $align: center, $gap: 24px);
-  max-width:1440px;
-  margin: auto;
-  font-size: 24px;
-  padding: 66px 0 29px 0;
-  background-color: black;
-  color: white;
-  
-  p {
-    padding-top: 22px;
-  }
+    height: 229px;
+    @include flex($direction: column, $align: center, $gap: 24px);
+    max-width: 1440px;
+    margin: auto;
+    font-size: 24px;
+    padding: 66px 0 29px 0;
+    background-color: black;
+    color: white;
+    @include screen-size(mobile-large) {
+        font-size: 12px;
+        gap: 0;
+        p {
+          text-align:center;
+            width: 122px;
+            padding-top: 16px;
+        }
+    }
 }
