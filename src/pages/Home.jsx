@@ -21,7 +21,7 @@ export default function Home() {
     useEffect(() => {
         async function fetchLogements() {
             try {
-                const url = 'http://localhost:3030/logements'
+                const url = 'http://localhost:3030/api/logements'
                 setIsLoading(true)
                 const response = await fetch(url)
                 const logementsDatas = await response.json()
