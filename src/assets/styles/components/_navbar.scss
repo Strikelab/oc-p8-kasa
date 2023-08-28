@@ -11,6 +11,7 @@ nav {
         color: $primary-color;
         &.active {
             border-bottom: 1px solid $primary-color;
+            cursor: default;
         }
     }
 
