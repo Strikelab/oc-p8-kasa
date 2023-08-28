@@ -34,11 +34,13 @@
         }
     }
     @include screen-size(mobile-large) {
-        height: 111px;
-        border-radius: 10px;
-        h1 {
-            margin: 0 16px;
-            font-size: 24px;
+        &__homepage {
+            height: 111px;
+            border-radius: 10px;
+            h1 {
+                margin: 0 16px;
+                font-size: 24px;
+            }
         }
     }
 }
