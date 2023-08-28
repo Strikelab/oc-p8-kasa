@@ -5,8 +5,8 @@
     &__message {
         @include flex($justify: center, $align: center, $gap: 15px);
         font-weight: $regular;
-        width: 100vw;
-        height: 3rem;
+        width: 100%;
+        height: 4rem;
         max-width: 1440px;
         font-size: 1.2rem;
         background-color: pink;
@@ -16,6 +16,12 @@
             width: 1.5rem;
             height: 1.5rem;
             opacity: 0.6;
+        }
+    }
+    @include screen-size(mobile-large) {
+        &__message {
+            padding: 0 10px;
+            font-size: 0.9rem !important ;
         }
     }
 }
