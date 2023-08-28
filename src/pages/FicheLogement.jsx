@@ -56,29 +56,34 @@ export default function FicheLogement() {
         return <Loader />
     } else {
         return (
-            <div className="fiche-logement page-container">
+            <div className="fiche-logement">
                 <Slider pictures={logementDatas.pictures} />
-                <div className="fiche-logement__head">
-                    <h2 className="fiche-logement__title">
-                        {logementDatas.title}
-                    </h2>
-                    <p className="fiche-logement__location">
-                        {logementDatas.location}
-                    </p>
+                <div className="fiche-logement__wrapper">
+                    <div className="fiche-logement__header">
+                        <h2 className="fiche-logement__title">
+                            {logementDatas.title}
+                        </h2>
+                        <p className="fiche-logement__location">
+                            {logementDatas.location}
+                        </p>
+                        <Tags tags={logementDatas.tags} />
+                    </div>
+                    <div className="fiche-logement__informations">
+                        <div className="fiche-logement__informations__host">
+                            <p className="fiche-logement__informations__host-name">
+                                {logementDatas.host.name}
+                            </p>
+                            <img
+                                className="fiche-logement__informations__host-avatar"
+                                src={logementDatas.host.picture}
+                                alt="avatar"
+                            />
+                        </div>
+
+                        <Rating rating={parseInt(logementDatas.rating)} />
+                    </div>
                 </div>
 
-                <div className="fiche-logement__host">
-                    <p className="fiche-logement__host__name">
-                        {logementDatas.host.name}
-                    </p>
-                    <img
-                        className="fiche-logement__host__avatar"
-                        src={logementDatas.host.picture}
-                        alt="avatar"
-                    />
-                </div>
-                <Tags tags={logementDatas.tags} />
-                <Rating rating={parseInt(logementDatas.rating)} />
                 <div className="fiche-logement__collapse-container">
                     <Collapse
                         title="Description"

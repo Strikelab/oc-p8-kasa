@@ -1,11 +1,9 @@
 .tags {
     color: red;
-padding-top:20px;
-    margin-bottom: 20px;
+
     @include flex($gap: 10px);
 
     .tag {
-      
         height: 25px;
         line-height: 25px;
         border-radius: 10px;
