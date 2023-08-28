@@ -21,5 +21,9 @@
     }
     @include screen-size(mobile-large) {
         padding: 20px 10px 0px 10px;
+        gap: 27px;
     }
+}
+a {
+    text-decoration: none !important ;
 }

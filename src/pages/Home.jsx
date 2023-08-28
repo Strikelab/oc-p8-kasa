@@ -10,7 +10,7 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(false)
     const [status, setStatus] = useState({})
 
-    const titleContent = <h1>Chez vous partout et ailleurs</h1>
+    const titleContent = <h1>Chez vous, partout&nbsp;et&nbsp;ailleurs</h1>
     const classNameValue = 'banner__homepage'
 
     //---comportements
