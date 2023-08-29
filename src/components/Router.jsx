@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from '../pages/Home'
 import FicheLogement from '../pages/FicheLogement'
-import PageNotFound from '../pages/PageNotFound'
+import PageNotFound from '../pages/404'
 import About from '../pages/About'
 
 export default function Router() {
