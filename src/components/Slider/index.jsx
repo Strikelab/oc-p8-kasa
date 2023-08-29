@@ -5,26 +5,23 @@ export default function Slider({ pictures }) {
     //---state
     const [slideAnim, setSlideAnim] = useState({
         index: 1,
-        inProgress: false,
     })
 
     //---comportments
-
     // slide forward and loop
-    //##TO DO : prevent spam click
     const nextSlide = () => {
         if (slideAnim.index !== pictures.length) {
-            setSlideAnim({ index: slideAnim.index + 1, inProgress: true })
+            setSlideAnim({ index: slideAnim.index + 1 })
         } else {
-            setSlideAnim({ index: 1, inProgress: true })
+            setSlideAnim({ index: 1 })
         }
     }
     // slide backward and loop
     const previousSlide = () => {
         if (slideAnim.index !== 1) {
-            setSlideAnim({ index: slideAnim.index - 1, inProgress: true })
+            setSlideAnim({ index: slideAnim.index - 1 })
         } else {
-            setSlideAnim({ index: pictures.length, inProgress: true })
+            setSlideAnim({ index: pictures.length })
         }
     }
 
