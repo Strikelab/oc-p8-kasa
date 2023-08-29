@@ -4,7 +4,7 @@
  ![Test Image 4](https://ftp.strikelab.fr/images/oc/kasa_preview.png)
 ## Lien 
 
-[https://oc-kasa.strikelab.fr](https:oc-kasa.strikelab.fr)
+[https://oc-kasa.strikelab.fr](https://oc-kasa.strikelab.fr)
 
 ## Technologies
 - react
