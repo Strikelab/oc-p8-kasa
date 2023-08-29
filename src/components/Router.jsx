@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from '../pages/Home'
 import FicheLogement from '../pages/FicheLogement'
-import PageNotFound from '../pages/404'
+import Error404 from '../pages/Error404'
 import About from '../pages/About'
 
 export default function Router() {
@@ -20,8 +20,7 @@ export default function Router() {
                     path="/logement/:idLogement"
                     element={<FicheLogement />}
                 />
-                <Route path="404_Not_Found" element={<PageNotFound />} />
-                <Route path="*" element={<PageNotFound />} />
+                <Route path="*" element={<Error404 />} />
             </Routes>
             <Footer />
         </BrowserRouter>
