@@ -1,30 +1,74 @@
-# Getting Started with Create React App
+# oc-p8-kasa
+ Projet N°8 du parcours intégrateur web OpenClassrooms
+ 
+ ![Test Image 4](https://ftp.strikelab.fr/images/oc/kasa_preview.png)
+## Lien 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[https://oc-kasa.strikelab.fr](https:oc-kasa.strikelab.fr)
 
-## Available Scripts
+## Technologies
+- react
+- javascript
+- HTML5 / CSS3
+- Sass
 
-In the project directory, you can run:
+## Auteurs
 
-### `npm start`
+- StrikeLab contact@strikelab.fr
 
+## License
+
+Ce projet est sous la licence GNU GPL V3 - voir le fichier [LICENSE](LICENSE) pour plus de détails
+
+## Installation : 
+Clone the project
+ ``` 
+git clone https://github.com/Strikelab/oc-p8-kasa.git
+ ```
+move to the project directory
+```
+cd ./oc-p8-kasa
+```
+Install dependancies
+```
+ npm install
+```
+ launch fake-API [json-server](https://github.com/typicode/json-server/tree/master) 
+```
+npm run start-server
+```
+Open [http://localhost:3030/logements](http://localhost:3000/logements) to view it in your browser.
+
+Available routes  : 
+```
+GET   /logements
+GET   /logements/id
+GET   /api/logements
+GET   /api/logements/id
+```
+launch App
+
+```
+npm start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run start-server`
+## Other react actions : 
 
-run a fake API REST server
-Open [http://localhost:3030/logements](http://localhost:3030/logmeents) to view it in your browser.
-
-### `npm test`
+```
+npm test
+```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+```
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -34,7 +78,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+```
+npm run eject
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
