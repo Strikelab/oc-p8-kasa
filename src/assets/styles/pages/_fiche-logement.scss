@@ -55,7 +55,7 @@
         }
     }
     @include screen-size(tablet-large) {
-        padding: 27px 20px;
+        padding: 27px 20px 37px;
         &__title {
             font-size: 27px;
         }
@@ -74,7 +74,6 @@
     }
     &__title {
         font-size: 22px;
-        line-height: 22px;
     }
     @include screen-size(mobile-large) {
         &__collapse-container {
@@ -91,15 +90,17 @@
             margin-bottom: 0;
         }
         &__title {
+            padding-top: 0;
             font-size: 18px;
-            line-height: 18px;
+            line-height: 25px;
         }
         &__location {
             font-size: 14px;
+            margin-bottom: 5px;
         }
         &__informations {
             &__host {
-                margin-top: 13px;
+                margin-top: 16px;
                 margin-bottom: 16px;
             }
             &__host-avatar {

@@ -30,4 +30,10 @@
         font-weight: $medium;
         color: white;
     }
+    @include screen-size(mobile-large) {
+        height: 255px;
+        &__counter {
+            display: none;
+        }
+    }
 }
