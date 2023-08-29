@@ -1,12 +1,22 @@
 .rating {
     @include flex($gap: 4px);
     height: 36px;
-    // justify-self:flex-start;
     align-self: flex-start;
     .star {
         padding: 5.5px;
         height: 36px;
         width: 36px;
         align-self: center;
+    }
+    @include screen-size(mobile-large) {
+        height: 18px;
+        padding-right: 3px;
+        padding-left: 3px;
+        gap: 5.5px;
+        .star {
+            padding: 0;
+            height: 14px;
+            width: 14px;
+        }
     }
 }

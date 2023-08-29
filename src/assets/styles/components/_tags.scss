@@ -1,7 +1,7 @@
 .tags {
     color: red;
-
     @include flex($gap: 10px);
+    // flex-wrap: wrap;
 
     .tag {
         height: 25px;
@@ -10,5 +10,16 @@
         color: white;
         background-color: $primary-color;
         padding: 0 37px;
+    }
+    @include screen-size(mobile-large) {
+        .tag {
+            padding: 0;
+            display: inline-block;
+            width: 84px;
+            text-align: center;
+            height: 18px;
+            font-size: 10px;
+            line-height: 18px;
+        }
     }
 }
