@@ -20,6 +20,7 @@ export default function Router() {
                     path="/logement/:idLogement"
                     element={<FicheLogement />}
                 />
+                <Route path="404_Not_Found" element={<PageNotFound />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Footer />
