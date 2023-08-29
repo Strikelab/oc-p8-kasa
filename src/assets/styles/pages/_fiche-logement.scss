@@ -1,64 +1,9 @@
-// .fiche-logement {
-//     @extend .page-container;
-//     @include flex($justify: space-between);
-//     flex-wrap: wrap;
-//     &__head {
-//         width: 80%;
-//     }
-//     &__title {
-//         color: $primary-color;
-//         font-weight: $medium;
-//         align-self: flex-start;
-//         font-size: 36px;
-//         line-height: 51px;
-//     }
-//     &__location {
-//         font-size: 18px;
-//         font-weight: $medium;
-//         align-self: flex-start;
-//         color: $primary-color;
-//         line-height: 26px;
-//     }
-//     &__cover {
-//         margin-bottom: 30px;
-//         height: 415px;
-//         width: 100%;
-//         border-radius: 25px;
-//     }
-//     &__informations {
-//         color: $primary-color;
-//         @include flex($gap: 10px);
-//         align-self: flex-start;
-//         justify-self: flex-end;
-//         &__avatar {
-//             height: 64px;
-//             width: 64px;
-//             border-radius: 50%;
-//         }
-//         &__name {
-//             max-width: 90px;
-//             text-align: right;
-//             align-self: center;
-//             color: inherit;
-//             font-size: 18px;
-//             font-weight: $medium;
-//             line-height: 26px;
-//         }
-//     }
-//     &__collapse-container {
-//         @include flex($gap: 76px);
-//         width: 100%;
-//         .collapse {
-//             width: 50%;
-//         }
-//     }
-// }
 .fiche-logement {
     margin: 0 auto;
     width: 100%;
     max-width: 1240px;
     color: $primary-color;
-    padding-bottom: 50px;
+    padding: 0 20px 50px 20px;
     &__wrapper {
         @include flex($justify: space-between);
         margin-top: 24px;
@@ -67,7 +12,7 @@
     &__title {
         padding-top: 6px;
         font-weight: $medium;
-        font-size: 36px;
+        font-size: 32px;
         line-height: 51px;
     }
     &__location {
@@ -102,6 +47,66 @@
 
         .collapse {
             width: 50%;
+        }
+    }
+    @include screen-size(desktop-large) {
+        &__title {
+            font-size: 36px;
+        }
+    }
+    @include screen-size(tablet-large) {
+        padding: 27px 20px;
+        &__title {
+            font-size: 27px;
+        }
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__informations {
+            @include flex($direction: row-reverse, $justify: space-between);
+
+            .rating {
+                align-self: center;
+            }
+        }
+    }
+    @include screen-size(tablet-small) {
+    }
+    &__title {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    @include screen-size(mobile-large) {
+        &__collapse-container {
+            @include flex($direction: column, $gap: 30px);
+            .collapse {
+                width: 100%;
+            }
+        }
+        &__wrapper {
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+        &__title {
+            font-size: 18px;
+            line-height: 18px;
+        }
+        &__location {
+            font-size: 14px;
+        }
+        &__informations {
+            &__host {
+                margin-top: 13px;
+                margin-bottom: 16px;
+            }
+            &__host-avatar {
+                width: 32px;
+                height: 32px;
+            }
+            &__host-name {
+                font-size: 12px;
+                max-width: 60px;
+            }
         }
     }
 }
