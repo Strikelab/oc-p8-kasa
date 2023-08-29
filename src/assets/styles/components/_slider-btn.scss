@@ -8,11 +8,11 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    opacity: 0.5;
-    transition: opacity ease-in-out 300ms;
-    &:hover {
-        opacity: 1;
-    }
+    // opacity: 0.5;
+    // transition: opacity ease-in-out 300ms;
+    // &:hover {
+    //     opacity: 1;
+    // }
 
     img {
         height: 79px;
@@ -26,5 +26,19 @@
         right: 0;
         padding-right: 23px;
         justify-content: flex-end;
+    }
+    @include screen-size(mobile-large) {
+        padding-top: 1.5px;
+        width: 24px;
+        height: 24px;
+        &__next {
+            padding-right: 5px;
+        }
+        &__prev {
+            padding-left: 5px;
+        }
+        img {
+            height: 20px;
+        }
     }
 }
