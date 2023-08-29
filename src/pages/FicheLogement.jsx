@@ -49,7 +49,7 @@ export default function FicheLogement() {
 
     //---display
     if (status.error === 404) {
-        return <Navigate to="/404_Not_found" />
+        return <Navigate to="/404_Not_Found" />
     } else if (status.error) {
         return <ErrorMessage error={status.error} />
     } else if (isLoading) {
