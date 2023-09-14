@@ -31,11 +31,11 @@ cd ./oc-p8-kasa
 ```
 Install dependancies
 ```
- pnpm install
+ npm install
 ```
  launch fake-API [json-server](https://github.com/typicode/json-server/tree/master) 
 ```
-pnpm run start-server
+npm run start-server
 ```
 Open [http://localhost:3030/logements](http://localhost:3000/logements) to view it in your browser.
 
@@ -49,7 +49,7 @@ GET   /api/logements/id
 launch App
 
 ```
-pnpm start
+npm start
 ```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -60,14 +60,14 @@ You may also see any lint errors in the console.
 ## Other react actions : 
 
 ```
-pnpm test
+npm test
 ```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ```
-pnpm run build
+npm run build
 ```
 
 Builds the app for production to the `build` folder.\
@@ -79,7 +79,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ```
-pnpm run eject
+npm run eject
 ```
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
