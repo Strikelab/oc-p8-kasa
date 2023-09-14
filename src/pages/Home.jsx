@@ -21,8 +21,8 @@ export default function Home() {
     useEffect(() => {
         async function fetchLogements() {
             try {
-                // const url = 'https://kasa.strikelab.fr/api/logements/'
-                const url = 'http://localhost:3030/api/logements'
+                const url = 'https://kasa.strikelab.fr/api/logements/'
+                // const url = 'http://localhost:3030/api/logements'
                 setIsLoading(true)
                 const response = await fetch(url)
                 const logementsDatas = await response.json()

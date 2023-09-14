@@ -28,8 +28,8 @@ export default function FicheLogement() {
     useEffect(() => {
         async function fetchLogmentDatas() {
             try {
-                const url = `http://localhost:3030/api/logements/${idLogement}`
-                // const url = `https://kasa.strikelab.fr/api/logements/${idLogement}`
+                // const url = `http://localhost:3030/api/logements/${idLogement}`
+                const url = `https://kasa.strikelab.fr/api/logements/${idLogement}`
 
                 setIsLoading(true)
                 const response = await fetch(url)
