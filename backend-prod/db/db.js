@@ -1,6 +1,6 @@
 // /db/db.js
 import { MongoClient, ServerApiVersion } from 'mongodb'
-import { ATLAS_URI } from '../setEnv.js'
+import { ATLAS_URI, DATABASE } from '../setEnv.js'
 
 let client = null
 let db = null
@@ -18,7 +18,7 @@ export async function connectToDatabase() {
         try {
             await client.connect()
             console.log('[MongoDB] Connected successfully to MongoDB')
-            db = client.db('kasa-db')
+            db = client.db(DATABASE)
         } catch (err) {
             console.error(
                 '[MongoDB] An error occurred while connecting to the database.'
