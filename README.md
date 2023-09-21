@@ -11,6 +11,10 @@
 - javascript
 - HTML5 / CSS3
 - Sass
+- node
+- express
+- mondoDB Atlas
+  
 
 ## Auteurs
 
