@@ -29,8 +29,6 @@ export default function FicheLogement() {
         async function fetchLogmentDatas() {
             try {
                 const url = `http://localhost:3030/api/logements/${idLogement}`
-                // const url = `https://kasa.strikelab.fr/api/logements/${idLogement}`
-
                 setIsLoading(true)
                 const response = await fetch(url)
                 if (response.status === 404) {
