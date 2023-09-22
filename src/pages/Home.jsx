@@ -4,7 +4,6 @@ import Card from '../components/Card'
 import Loader from '../components/Loader'
 import ErrorMessage from '../components/ErrorMessage'
 import { apiUrl, logementsEndPoint } from '../utils/setEnv'
-console.log(process.env)
 export default function Home() {
     //---State
     const [logementsDatas, setLogementsDatas] = useState([])
