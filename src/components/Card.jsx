@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Card({ logementDatas }) {
     const { id, title, cover } = logementDatas
-    console.log('logementDatas',logementDatas)
+  
     return (
         <Link className="card" to={`/logement/${id}`} state={logementDatas}>
             <img
