@@ -7,7 +7,7 @@ import Collapse from '../components/Collapse'
 import Slider from '../components/Slider'
 import Loader from '../components/Loader'
 import ErrorMessage from '../components/ErrorMessage'
-
+import { apiUrl, logementsEndPoint } from '../utils/setEnv'
 export default function FicheLogement() {
     //---state
     //logement Datas
@@ -28,7 +28,8 @@ export default function FicheLogement() {
     useEffect(() => {
         async function fetchLogmentDatas() {
             try {
-                const url = `http://localhost:3030/api/logements/${idLogement}`
+                
+                const url =`${apiUrl}/${logementsEndPoint}/${idLogement}`
                 setIsLoading(true)
                 const response = await fetch(url)
                 if (response.status === 404) {

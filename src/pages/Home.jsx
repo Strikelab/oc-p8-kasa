@@ -3,7 +3,8 @@ import Banner from '../components/Banner'
 import Card from '../components/Card'
 import Loader from '../components/Loader'
 import ErrorMessage from '../components/ErrorMessage'
-
+import { apiUrl, logementsEndPoint } from '../utils/setEnv'
+console.log(process.env)
 export default function Home() {
     //---State
     const [logementsDatas, setLogementsDatas] = useState([])
@@ -21,7 +22,8 @@ export default function Home() {
     useEffect(() => {
         async function fetchLogements() {
             try {
-                const url = 'http://localhost:3030/api/logements'
+               
+                const url =`${apiUrl}/${logementsEndPoint}`
                 setIsLoading(true)
                 const response = await fetch(url)
                 const logementsDatas = await response.json()

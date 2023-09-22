@@ -12,5 +12,6 @@ export default function Card({ logementDatas }) {
             />
             <h2 className={'card__title'}>{title}</h2>
         </Link>
+     
     )
 }
