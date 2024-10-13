@@ -1,7 +1,7 @@
 # oc-p8-kasa
  Projet N°8 du parcours intégrateur web OpenClassrooms
  
- ![Test Image 4](https://ftp.strikelab.fr/images/oc/kasa_preview.png)
+ ![Test Image 4](https://share.nvlb.fr/images/oc/kasa_preview.png)
 ## Lien 
 
 [https://oc-kasa.strikelab.fr](https://oc-kasa.strikelab.fr)
